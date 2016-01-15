@@ -5,7 +5,7 @@
   "description": "Message",
   "properties": {
     "id": {
-      "$ref": "../base_types/base_types.json#definitions/id",
+      "$ref": "./base_types/base_types.json#definitions/id",
       "readOnly": true
     },
     "subject": {
