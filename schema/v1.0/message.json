@@ -13,11 +13,6 @@
       "readOnly": true,
       "type": "string"
     },
-    "body": {
-      "description": "Body of the message",
-      "readOnly": true,
-      "type": "string"
-    },
     "type": {
       "description": "Type of the message",
       "type": "string",
@@ -26,6 +21,22 @@
         "offer",
         "document"
       ]
+    },
+    "category": {
+      "description": "Category of the message",
+      "type": "string"
+    },
+    "opened_at": {
+      "description" : "Date-time when message has been opened. ISO 8601 Date-Time",
+      "format"      : "date-time",
+      "type"        : "string",
+      "readOnly"    : true
+    },
+    "archived_at": {
+      "description" : "Date-time when message has been archived. ISO 8601 Date-Time",
+      "format"      : "date-time",
+      "type"        : "string",
+      "readOnly"    : true
     },
     "created_at": {
       "$ref": "./base_types/base_types.json#definitions/created_at"
