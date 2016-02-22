@@ -1,7 +1,7 @@
 {
   "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
-  "title"       : "push_token",
+  "title"       : "push_notification_token",
   "description" : "Allows apps that can receive push notifications to manage their tokens.",
   "required"    : ["push_token", "os", "version_app", "udid", "application_key"],
   "properties"  : {
