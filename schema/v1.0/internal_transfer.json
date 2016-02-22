@@ -49,6 +49,9 @@
       "$ref"      : "./base_types/base_types.json#definitions/subject",
       "maxLength" : 300
     },
+    "recipient_name" : {
+      "$ref" : "./base_types/base_types.json#definitions/recipient_name"    
+    },
     "state" : {
       "description" : "State of the transfer. received: Order accepted by system | mobile_tan_sent: mtan for order processing was sent | pending_receiver_message: ??? | pending_receiver : ??? | pending_backoffice_transfer: ??? | success: transfer successfully executed | failure: An error occurred during execution | expired : mtan or receiver response expired",
       "enum"        : [
