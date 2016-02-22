@@ -1,0 +1,91 @@
+{
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
+  "type"        : "object",
+  "title"       : "push_token",
+  "description" : "Allows apps that can receive push notifications to manage their tokens.",
+  "required"    : ["push_token", "os", "version_app", "udid", "application_key"],
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
+    },
+    "udid" : {
+      "description" : "Unique identifier of the device",
+      "type"        : "string"
+    },
+    "push_token" : {
+      "description" : "Push notification token",
+      "type"        : "string"
+    },
+    "application_key" : {
+      "description" : "Identifier of the application created in apm",
+      "type"        : "string"
+    },
+    "os" : {
+      "description" : "Operating system for push notification token",
+      "type"        : "string"
+    },
+    "version_app" : {
+      "description" : "Incremental value of application release, exp. Build for iOS or versionCode for Android",
+      "type"        : "string"
+    },
+    "version_name" : {
+      "description" : "Defined name of application release, exp. version for iOS or versionName for Android",
+      "type"        : "string"
+    },
+    "preferences" : {
+      "description" : "Preferences of push notification set by user",
+      "type"       : "object",
+      "$ref" : "./push_notification_token/preferences.json#"
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links" : [
+    {
+      "description" : "Push notification token information",
+      "href"        : "push_notification_tokens/{id}",
+      "method"      : "GET",
+      "rel"         : "self",
+      "title"       : "Show"
+    },
+    {
+      "description" : "Store new push notification token for a customer",
+      "href"        : "push_notification_tokens",
+      "rel"         : "create",
+      "method"      : "POST",
+      "title"       : "Create"
+    },
+    {
+      "rel"         : "instances",
+      "href"        : "push_notification_tokens",
+      "description" : "All push notification tokens of customer",
+      "method"      : "GET",
+      "title"       : "Index",
+      "properties" : {
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "integer"
+        },
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "integer"
+        },
+        "sort" : {
+          "title" : "Sort",
+          "enum"  : [
+            "ASC",
+            "DESC"
+          ],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
+        }
+      }
+    }
+  ]
+}
