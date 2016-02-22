@@ -42,9 +42,7 @@
       "type"        : "string"
     },
     "recipient_name": {
-      "description" : "Full name of the recipient",
-      "readOnly"    : true,
-      "type"        : "string"
+      "$ref" : "../base_types/base_types.json#definitions/recipient_name"
     }
   }
 }

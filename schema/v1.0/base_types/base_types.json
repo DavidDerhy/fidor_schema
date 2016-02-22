@@ -23,6 +23,10 @@
       "type"        : "string",
       "maxLength"   : 30
     },
+    "recipient_name" : {
+      "description" : "Full name of the recipient",
+      "type"        : "string"
+    },
     "transaction_id" : {
       "description" : "Identifies a reference to a corresponding transaction",
       "readOnly"    : true,
