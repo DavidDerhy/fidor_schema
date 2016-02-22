@@ -1,0 +1,20 @@
+{
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
+  "type"        : "object",
+  "title"       : "push_notification_token_preferences",
+  "description" : "Preferences of user for push notification delivery",
+  "properties"  : {
+    "vibrations" : {
+      "description" : "Vibrate on received",
+      "type"        : "boolean"
+    },
+    "badges" : {
+      "description" : "Highligh the icon with badge",
+      "type"        : "boolean"
+    },
+    "sounds" : {
+      "description" : "Play sound when received",
+      "type"        : "boolean"
+    }
+  }
+}
