@@ -1,9 +1,0 @@
-{
-  "type"        : "object",
-  "title"       : "blocked_amount",
-  "description" : "",
-  "properties"  : {
-
-  },
-  "links" : []
-}
