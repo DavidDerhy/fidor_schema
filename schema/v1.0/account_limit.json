@@ -1,0 +1,33 @@
+{
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
+  "type"        : "object",
+  "title"       : "account_limit",
+  "description" : "See and update your account limits",
+  "properties"  : {
+    "order_limit"  : {
+      "description" : "A limit for a single transaction order",
+      "$ref" : "./base_types/base_types.json#definitions/amount"
+    },
+    "cash_limit" : {
+      "description" : "Limit for the transactions authorized with FIN",
+      "$ref" : "./base_types/base_types.json#definitions/amount"
+    },
+    "daily_limit" : {
+      "description" : "Daily transaction limit",
+      "$ref" : "./base_types/base_types.json#definitions/amount"
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "account_limits"
+    },
+    {
+      "description" : "Update your account limits",
+      "href"        : "account_limits",
+      "method"      : "PUT",
+      "rel"         : "update",
+      "title"       : "update_account_limits"
+    }
+  ]
+}
