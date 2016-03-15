@@ -234,6 +234,19 @@
       "href" : "customers/{id}/projected_rewards"
     },
     {
+     "rel"  : "card_information",
+      "href" : "customers/{id}/card_information"
+    },
+    {
+      "rel"  : "customer_level",
+      "href" : "customers/{id}/customer_level"
+    },
+    {
+      "rel"    : "reward_redemptions",
+      "href"   : "customers/{id}/reward_redemptions",
+      "method" : "POST"
+    },
+    {
       "rel"         : "update",
       "href"        : "customers/{id}",
       "method"      : "PUT",
