@@ -238,8 +238,12 @@
       "href" : "customers/{id}/card_information"
     },
     {
-      "rel"  : "customer_level",
-      "href" : "customers/{id}/customer_level"
+      "rel"  : "levels",
+      "href" : "customers/{id}/levels"
+    },
+    {
+      "rel"  : "levels/current",
+      "href" : "customers/{id}/levels/current"
     },
     {
       "rel"    : "reward_redemptions",
