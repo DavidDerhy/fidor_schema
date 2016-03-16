@@ -21,7 +21,7 @@
   "links": [
     {
       "rel": "push",
-      "href": "notification/push",
+      "href": "notifications/push",
       "method": "POST"
     }
   ]

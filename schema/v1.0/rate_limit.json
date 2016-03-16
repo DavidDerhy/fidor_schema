@@ -23,7 +23,7 @@
   "links" : [
     {
       "rel"  : "instances",
-      "href" : "rate_limits"
+      "href" : "rate_limit"
     }
   ]
 }
