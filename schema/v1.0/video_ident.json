@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "video_ident",
+  "description": "Creates IDnow identifications",
+  "properties": {
+    "customer_id": {
+      "$ref": "./base_types/base_types.json#definitions/account_id"
+    }
+  },
+  "links": [
+    {
+      "rel": "create",
+      "href": "video_idents",
+      "method": "POST"
+    }
+  ]
+}
