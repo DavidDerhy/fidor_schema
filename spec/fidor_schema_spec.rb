@@ -9,17 +9,14 @@ describe Fidor::Schema do
   end
 
   context 'read schemata' do
-
     it 'should read all json files' do
       SchemaTools.schema_path = Fidor::Schema.path
       SchemaTools::Reader.read_all
       expect(SchemaTools::Reader.registry).to_not be_empty
     end
-
   end
 
   context 'resolves $refs' do
-
     it 'in single schema' do
       SchemaTools.schema_path = Fidor::Schema.path
       schema = SchemaTools::Reader.read('account').to_h
@@ -35,6 +32,15 @@ describe Fidor::Schema do
       }
       expect(out).to_not include('$ref')
     end
+  end
 
+  context 'validate schemata' do
+    it 'should validate all' do
+      schema_path = Fidor::Schema.path
+      errors = JsonSchemaValidator.validate_schemas(schema_path)
+      errors.each do |name, error|
+        expect(error).to be_empty
+      end
+    end
   end
 end

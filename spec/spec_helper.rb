@@ -4,6 +4,7 @@ $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'rspec'
 require 'json_schema_tools'
+require 'json_schema_validator'
 require 'fidor_schema'
 
 RSpec.configure do |config|
