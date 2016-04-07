@@ -47,6 +47,10 @@
         {
           "title": "mobile_topup_details",
           "$ref" : "./transaction_type_details/mobile_topup_details.json#"
+        },
+        {
+          "title": "fps_details",
+          "$ref" : "./transaction_type_details/fps_details.json#"
         }
       ]
     },
