@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "fps_transfer",
+  "description": "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
+  "required": [
+    "account_id",
+    "amount",
+    "external_uid",
+    "remote_account",
+    "remote_sort_code"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "./base_types/base_types.json#definitions/id"
+    },
+    "external_uid": {
+      "$ref": "./base_types/base_types.json#definitions/external_uid"
+    },
+    "account_id": {
+      "$ref": "./base_types/base_types.json#definitions/account_id"
+    },
+    "user_id": {
+      "$ref": "./base_types/base_types.json#definitions/user_id"
+    },
+    "transaction_id": {
+      "$ref": "./base_types/base_types.json#definitions/transaction_id"
+    },
+    "subject": {
+      "$ref": "./base_types/base_types.json#definitions/subject",
+      "maxLength": 140
+    },
+    "amount": {
+      "$ref": "./base_types/base_types.json#definitions/amount"
+    },
+    "currency": {
+      "$ref": "./base_types/base_types.json#definitions/currency",
+      "readOnly": true
+    },
+    "fee": {
+      "$ref": "./base_types/base_types.json#definitions/fee",
+      "readOnly": true
+    },
+    "remote_name": {
+      "description": "Receiving account holder name",
+      "type": "string",
+      "maxLength": 70
+    },
+    "remote_account": {
+      "$ref": "../base_types/base_types.json#definitions/account"
+    },
+    "remote_sort_code": {
+      "$ref": "../base_types/base_types.json#definitions/sort_code"
+    },
+    "state": {
+      "description": "State of the transfer. received: Order was accepted by the system | processing: Order is being processed | mobile_tan_sent: awaiting tan entry | expired : mtan entry expired | failure: transfer could not be completed | success: transfer successfully executed",
+      "enum": [
+        "received",
+        "mobile_tan_sent",
+        "success",
+        "expired",
+        "failure"
+      ],
+      "readOnly": true,
+      "type": "string"
+    },
+    "created_at": {
+      "$ref": "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at": {
+      "$ref": "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "fps_transfers/{id}"
+    },
+    {
+      "rel": "instances",
+      "href": "fps_transfers",
+      "properties": {
+        "filter[account_ids]": {
+          "description": "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "type": "string"
+        },
+        "filter[created_at_from]": {
+          "description": "Creation date filter from >= date",
+          "format": "date-time",
+          "type": "string"
+        },
+        "filter[created_at_to]": {
+          "description": "Creation date filter to <= date",
+          "format": "date-time",
+          "type": "string"
+        },
+        "filter[states]": {
+          "description": "Filter by single or multiple csv delimited states",
+          "enum": [
+            "received",
+            "mobile_tan_sent",
+            "success",
+            "expired",
+            "failure"
+          ],
+          "type": "string"
+        },
+        "page": {
+          "title": "Page",
+          "description": "In paginated results set the page to look for",
+          "type": "integer"
+        },
+        "per_page": {
+          "title": "Per page",
+          "description": "Results per page. Default is 10, max is 100",
+          "type": "integer"
+        },
+        "sort": {
+          "title": "Sort",
+          "enum": [
+            "ASC",
+            "DESC"
+          ],
+          "description": "Sort the results in ASC or DESC",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "rel": "create",
+      "href": "fps_transfers",
+      "method": "POST"
+    }
+  ]
+}

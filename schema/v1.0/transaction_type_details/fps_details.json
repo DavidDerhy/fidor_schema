@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "fps_details",
+  "description": "Remote account information available in a Faster Payments transfer",
+  "properties": {
+    "fps_transfer_id": {
+      "description": "Id of transfer if transaction was created by a transfer.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "remote_name": {
+      "description": "Receiving account holder name",
+      "type": "string",
+      "maxLength": 70,
+      "readOnly": true
+    },
+    "remote_account": {
+      "$ref": "../base_types/base_types.json#definitions/account",
+      "readOnly": true
+    },
+    "remote_sort_code": {
+      "$ref": "../base_types/base_types.json#definitions/sort_code",
+      "readOnly": true
+    }
+  }
+}

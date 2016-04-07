@@ -77,6 +77,18 @@
       "pattern"     : "^[A-Z0-9]{8,11}$",
       "maxLength"   : 11
     },
+    "account" : {
+      "description" : "UK Bank's Account Number",
+      "type"        : "string",
+      "maxLength"   : 8,
+      "pattern"     : "^(\\d){7,8}$"
+    },
+    "sort_code" : {
+      "description" : "UK Bank's Sort Code",
+      "type"        : "string",
+      "maxLength"   : 6,
+      "pattern"     : "(\\d{2}-?){2}\\d{2}"
+    },
     "eref" : {
       "description" : "End-to-end reference.",
       "type"        : "string",
@@ -130,6 +142,8 @@
         "fee",
         "fidor_payin",
         "fidor_payout",
+        "fps_payin",
+        "fps_payout",
         "gmt_fee",
         "gmt_refund",
         "gmt_payout",
