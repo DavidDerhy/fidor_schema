@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version = Fidor::Schema::VERSION
   spec.authors = ['Georg Leciejewski']
   spec.email = 'dev@fidor.de'
-  spec.summary = 'BETA Fidor API - JSON Schema'
-  spec.description = %q{Fidor API description. Using JSON Schema to describe the available objects, their fields and resource links. Beware of the BETA status, as things can change slightly}
-  spec.homepage = 'https://www.fidor.de'
+  spec.summary = 'DEPRECATED'
+  spec.description = %q{The fidor_schema gem is deprecated and will soon be removed. Please don't relay on the JSon schemas provided with this gem!!!}
+  spec.homepage = 'https://github.com/fidor/fidor_schema'
   spec.license = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject{|i| i[/^docs\//] }
