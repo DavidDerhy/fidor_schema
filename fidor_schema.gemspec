@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors = ['Georg Leciejewski']
   spec.email = 'dev@fidor.de'
   spec.summary = 'DEPRECATED'
-  spec.description = %q{The fidor_schema gem is deprecated and will soon be removed. Please don't relay on the JSon schemas provided with this gem!!!}
+  spec.description = %q{The fidor_schema gem is deprecated and will soon be removed. Please do not rely on the JSon schemas provided with this gem!!!}
   spec.homepage = 'https://github.com/fidor/fidor_schema'
   spec.license = 'MIT'
 
